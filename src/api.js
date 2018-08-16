@@ -1,10 +1,10 @@
 import openSocket from 'socket.io-client';
 const socket = openSocket('http://localhost:8000');
 
-export const getOrderBooks = (callBack) => {
-    socket.emit('getOrderBooks', 'sample payload')
+export const getBittrex = (callBack) => {
+    socket.emit('getBittrex', 'sample payload')
     socket.on('orderBookData', (data) => {
-        console.log('recieved book data', data)
+        console.log('recieved Bittrex data', data)
         return callBack(null, data)
     })
 }
