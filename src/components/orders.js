@@ -22,7 +22,7 @@ class Orders extends React.Component {
         getBittrex((error, data) => {
           console.log('component has socket data');
           this.setState({
-           bittrex : data,
+           bittrex : data.A[0].Buys,
           })
         });
     
@@ -34,6 +34,7 @@ class Orders extends React.Component {
         });
       }
     render() {
+        console.log("LOG THIS YOU BEAUTIFUL IDIOT", this.state.bittrex);
         let data = [
             {name: 'Point 1', Bittrex: 4000, Poloniex:2400, amt: 2400},
             {name: 'Point 2', Bittrex: 3000, Poloniex:1398, amt: 2210},
